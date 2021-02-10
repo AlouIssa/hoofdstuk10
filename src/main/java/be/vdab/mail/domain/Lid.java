@@ -30,7 +30,7 @@ public class Lid {
         this.emailAdres = emailAdres;
         this.lidSinds = LocalDate.now();
     }
-    public Lid(){}
+    protected Lid(){}
 
     public long getId() {
         return id;

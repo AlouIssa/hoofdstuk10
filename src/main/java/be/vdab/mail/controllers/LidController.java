@@ -55,4 +55,11 @@ public class LidController {
     public String nietgeregistreerd(){
         return "nietgeregistreerd";
     }
+
+    @GetMapping("{id}")
+    public ModelAndView info(@PathVariable long id){
+        var modelAndView = new ModelAndView("lidinfo");
+        lidService.findById(id).ifPresent(lid -> modelAndView.addObject(lid));
+        return modelAndView;
+    }
 }
